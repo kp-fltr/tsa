@@ -1,0 +1,1019 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap');
+
+/* Ensure browsers paint native controls in light mode */
+:root { 
+  color-scheme: light; 
+}
+
+/* Global CSS (shell only) */
+html, body { 
+  height: 100%; 
+  margin: 0; 
+}
+
+body { 
+  overflow: hidden; /* prevents window scroll; content will scroll */
+}
+
+/* Enhanced Main Content Scrolling */
+.main-scroll {
+  overflow-y: auto;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(113, 113, 121, 0.3) transparent;
+}
+
+/* Custom Scrollbar Styling - Webkit browsers */
+.main-scroll::-webkit-scrollbar {
+  width: 12px;
+}
+
+.main-scroll::-webkit-scrollbar-track {
+  background: transparent;
+  border-radius: 6px;
+}
+
+.main-scroll::-webkit-scrollbar-thumb {
+  background-color: rgba(113, 113, 121, 0.2);
+  border-radius: 6px;
+  border: 2px solid transparent;
+  background-clip: content-box;
+  transition: background-color 0.2s ease;
+}
+
+.main-scroll::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(113, 113, 121, 0.4);
+}
+
+.main-scroll::-webkit-scrollbar-thumb:active {
+  background-color: rgba(113, 113, 121, 0.6);
+}
+
+/* Smooth mobile scroll + Safari */
+main { 
+  -webkit-overflow-scrolling: touch; 
+}
+
+:root {
+  /* Base font size for the application */
+  --font-size: 14px;
+  
+  /* Desktop Typography Variables */
+  --text-h1: 38px;
+  --text-h1-lh: 46px;
+  --text-h2: 30px;
+  --text-h2-lh: 38px;
+  --text-h3: 24px;
+  --text-h3-lh: 32px;
+  --text-h4: 20px;
+  --text-h4-lh: 28px;
+  --text-h5: 16px;
+  --text-h5-lh: 24px;
+  --text-lg: 16px;
+  --text-lg-lh: 24px;
+  --text-base: 14px;
+  --text-base-lh: 22px;
+  --text-sm: 12px;
+  --text-sm-lh: 20px;
+  
+  /* Font weights */
+  --font-weight-regular: 400;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  
+  /* The default background color for the application. */
+  --background: rgba(244, 244, 245, 1.00);
+  /* The default color for elements or text that appears on top of the background. */
+  --foreground: rgba(24, 24, 27, 1.00);
+  /* The background color for cards, modals, and other containers. */
+  --card: rgba(255, 255, 255, 1.00);
+  /* The default color for text or elements that appears on top of cards, modals and other background containers. */
+  --card-foreground: rgba(24, 24, 27, 1.00);
+  /* The background color for dropdowns and tooltips. */
+  --popover: rgba(255, 255, 255, 1.00);
+  /* The default color for text or elements that appear on top of dropdowns and tooltips. */
+  --popover-foreground: rgba(24, 24, 27, 1.00);
+  /* The primary color used for buttons, links, and other interactive elements. */
+  --primary: rgba(24, 24, 27, 1.00);
+  /* The default color for text or elements that appear on top of primary colored elements. */
+  --primary-foreground: rgba(255, 255, 255, 1.00);
+  /* The secondary color used for secondary(but NOT-DESTRUCTIVE) buttons and interactive elements. */
+  --secondary: rgba(244, 244, 245, 1.00);
+  /* The default color for text or elements that appear on top of secondary colored elements. */
+  --secondary-foreground: rgba(24, 24, 27, 1.00);
+  /* The muted color used for less prominent elements, such as disabled buttons or disabled text. */
+  --muted: rgba(24, 24, 27, 0.04);
+  /* The default color for text or elements that appear on top of muted colored elements. */
+  --muted-foreground: rgba(113, 113, 121, 1.00);
+  /* The accent color used for highlights, links, and other interactive elements. */
+  --accent: rgba(244, 244, 245, 1.00);
+  /* The default color for text or elements that appear on top of accent colored elements. */
+  --accent-foreground: rgba(24, 24, 27, 1.00);
+  /* The color used for background in destructive actions, such as delete buttons or error messages. */
+  --destructive: rgba(220, 38, 38, 1.00);
+  /* The default color for text or elements that appear on top of destructive colored elements. */
+  --destructive-foreground: rgba(255, 255, 255, 1.00);
+  /* The default border color for elements such as inputs, buttons, and other containers. */
+  --border: rgba(212, 212, 216, 1.00);
+  /* The default background color for input fields once the text has been filled. Should be either transparent or match the input-background. */
+  --input: rgba(255, 255, 255, 1.00);
+  /* The default background color for input fields, text areas, and other input elements. */
+  --input-background: rgba(255, 255, 255, 1.00);
+  /* The default color for focus rings, outlines, and other focus indicators. */
+  --ring: rgba(24, 24, 27, 0.10);
+  /* Shadow for small elevations, such as cards or modals. */
+  --elevation-sm: 0px 1px 2px 0px rgba(24, 24, 27, 0.02);
+  /* The color for chart elements, such as a bar or line in a chart. */
+  --chart-1: rgba(22, 119, 255, 1.00);
+  /* The color for another chart element, such as a bar or line in a chart. */
+  --chart-2: rgba(16, 185, 129, 1.00);
+  /* The color for another chart element, such as a bar or line in a chart. */
+  --chart-3: rgba(245, 158, 11, 1.00);
+  /* The color for another chart element, such as a bar or line in a chart. */
+  --chart-4: rgba(220, 38, 38, 1.00);
+  /* The color for another chart element, such as a bar or line in a chart. */
+  --chart-5: rgba(124, 58, 237, 1.00);
+  /* The default border radius for elements such as buttons, tooltip, and other containers. */
+  --radius: 0.375rem;
+  /* The border radius specifically for buttons. */
+  --radius-button: 0.375rem;
+  /* The border radius specifically for cards. */
+  --radius-card: 0.5rem;
+  /* The background color for sidebars, navigation menus, and other persistent elements. */
+  --sidebar: rgba(255, 255, 255, 1.00);
+  /* The default color for text or elements that appear on top of sidebars, navigation menus, and other persistent elements. */
+  --sidebar-foreground: rgba(24, 24, 27, 0.70);
+  /* The primary color used for selected/active states in sidebars - matches table selection color */
+  --sidebar-primary: rgba(22, 119, 255, 0.08);
+  /* The default color for text or elements that appear on top of primary colored elements in sidebars and navigation menus. */
+  --sidebar-primary-foreground: rgba(22, 119, 255, 1.00);
+  /* The accent color used for hover states in sidebars and navigation menus - light gray */
+  --sidebar-accent: rgba(244, 244, 245, 1.00);
+  /* The default color for text or elements that appear on top of accent colored elements in sidebars and navigation menus. */
+  --sidebar-accent-foreground: rgba(24, 24, 27, 1.00);
+  /* The default border color for elements in sidebars and navigation menus. */
+  --sidebar-border: rgba(212, 212, 216, 1.00);
+  /* The default color for focus rings, outlines, and other focus indicators in sidebars and navigation menus. */
+  --sidebar-ring: rgba(24, 24, 27, 0.10);
+  
+  /* Sidebar width variables for responsive behavior */
+  --sidebar-width: 16rem;
+  --sidebar-width-icon: 3rem;
+  --sidebar-width-mobile: 18rem;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-input-background: var(--input-background);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 0.125rem);
+  --radius-md: var(--radius);
+  --radius-lg: var(--radius-card);
+  --radius-xl: calc(var(--radius-card) + 0.125rem);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --shadow-sm: var(--elevation-sm);
+}
+
+/* Mobile Typography Variables */
+@media (max-width: 767px) {
+  :root {
+    --text-h1: 30px;
+    --text-h1-lh: 38px;
+    --text-h2: 25px;
+    --text-h2-lh: 32px;
+    --text-h3: 21px;
+    --text-h3-lh: 28px;
+    --text-h4: 19px;
+    --text-h4-lh: 24px;
+    --text-h5: 16px;
+    --text-h5-lh: 22px;
+    --text-lg: 16px;
+    --text-lg-lh: 24px;
+    --text-base: 15px;
+    --text-base-lh: 22px;
+    --text-sm: 13px;
+    --text-sm-lh: 19px;
+  }
+
+  /* Mobile scroll optimization */
+  .main-scroll {
+    scrollbar-width: none; /* Hide scrollbar on mobile for cleaner look */
+  }
+  
+  .main-scroll::-webkit-scrollbar {
+    display: none; /* Hide scrollbar on mobile webkit */
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  html {
+    font-size: 16px;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', sans-serif;
+    font-size: var(--text-base);
+    line-height: var(--text-base-lh);
+  }
+}
+
+/* Typography Base Styles */
+h1 {
+  font-family: 'Nunito', sans-serif;
+  font-size: var(--text-h1);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--text-h1-lh);
+  letter-spacing: -0.02em;
+  margin: 0;
+}
+
+h2 {
+  font-family: 'Nunito', sans-serif;
+  font-size: var(--text-h2);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--text-h2-lh);
+  letter-spacing: -0.01em;
+  margin: 0;
+}
+
+h3 {
+  font-family: 'Nunito', sans-serif;
+  font-size: var(--text-h3);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--text-h3-lh);
+  letter-spacing: -0.01em;
+  margin: 0;
+}
+
+h4 {
+  font-family: 'Nunito', sans-serif;
+  font-size: var(--text-h4);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--text-h4-lh);
+  margin: 0;
+}
+
+h5 {
+  font-family: 'Nunito', sans-serif;
+  font-size: var(--text-h5);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--text-h5-lh);
+  margin: 0;
+}
+
+h6 {
+  font-family: 'Nunito', sans-serif;
+  font-size: var(--text-base);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--text-base-lh);
+  margin: 0;
+}
+
+p {
+  font-family: 'Inter', sans-serif;
+  font-size: var(--text-base);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--text-base-lh);
+  margin: 0;
+}
+
+span {
+  font-family: 'Inter', sans-serif;
+  font-size: var(--text-base);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--text-base-lh);
+}
+
+label {
+  font-family: 'Inter', sans-serif;
+  font-size: var(--text-sm);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--text-sm-lh);
+}
+
+strong, b {
+  font-family: 'Inter', sans-serif;
+  font-weight: var(--font-weight-semibold);
+}
+
+em, i {
+  font-style: italic;
+}
+
+u {
+  text-decoration: underline;
+}
+
+del, s {
+  text-decoration: line-through;
+}
+
+button {
+  font-family: 'Inter', sans-serif;
+  font-size: var(--text-base);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--text-base-lh);
+}
+
+input, textarea, select {
+  font-family: 'Inter', sans-serif;
+  font-size: var(--text-base);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--text-base-lh);
+}
+
+/* Ensure minimum font size on mobile for accessibility */
+@media (max-width: 767px) {
+  input, textarea, select, button {
+    font-size: max(var(--text-base), 16px);
+  }
+}
+
+/* Typography Utility Classes */
+@layer utilities {
+  /* Text Size Utilities */
+  .text-h1 {
+    font-family: 'Nunito', sans-serif;
+    font-size: var(--text-h1);
+    font-weight: var(--font-weight-bold);
+    line-height: var(--text-h1-lh);
+    letter-spacing: -0.02em;
+  }
+  
+  .text-h2 {
+    font-family: 'Nunito', sans-serif;
+    font-size: var(--text-h2);
+    font-weight: var(--font-weight-bold);
+    line-height: var(--text-h2-lh);
+    letter-spacing: -0.01em;
+  }
+  
+  .text-h3 {
+    font-family: 'Nunito', sans-serif;
+    font-size: var(--text-h3);
+    font-weight: var(--font-weight-semibold);
+    line-height: var(--text-h3-lh);
+    letter-spacing: -0.01em;
+  }
+  
+  .text-h4 {
+    font-family: 'Nunito', sans-serif;
+    font-size: var(--text-h4);
+    font-weight: var(--font-weight-semibold);
+    line-height: var(--text-h4-lh);
+  }
+  
+  .text-h5 {
+    font-family: 'Nunito', sans-serif;
+    font-size: var(--text-h5);
+    font-weight: var(--font-weight-semibold);
+    line-height: var(--text-h5-lh);
+  }
+  
+  .text-lg {
+    font-family: 'Inter', sans-serif;
+    font-size: var(--text-lg);
+    font-weight: var(--font-weight-regular);
+    line-height: var(--text-lg-lh);
+  }
+  
+  .text-base {
+    font-family: 'Inter', sans-serif;
+    font-size: var(--text-base);
+    font-weight: var(--font-weight-regular);
+    line-height: var(--text-base-lh);
+  }
+  
+  .text-sm {
+    font-family: 'Inter', sans-serif;
+    font-size: var(--text-sm);
+    font-weight: var(--font-weight-regular);
+    line-height: var(--text-sm-lh);
+  }
+  
+  /* Font Weight Utilities */
+  .font-regular {
+    font-weight: var(--font-weight-regular);
+  }
+  
+  .font-semibold {
+    font-weight: var(--font-weight-semibold);
+  }
+  
+  .font-bold {
+    font-weight: var(--font-weight-bold);
+  }
+  
+  /* Font Family Utilities */
+  .font-nunito {
+    font-family: 'Nunito', sans-serif;
+  }
+  
+  .font-inter {
+    font-family: 'Inter', sans-serif;
+  }
+  
+  /* Text Style Utilities */
+  .text-strong {
+    font-weight: var(--font-weight-semibold);
+  }
+  
+  .text-italic {
+    font-style: italic;
+  }
+  
+  .text-underline {
+    text-decoration: underline;
+  }
+  
+  .text-line-through {
+    text-decoration: line-through;
+  }
+  
+  .text-no-decoration {
+    text-decoration: none;
+  }
+  
+  /* Line Height Utilities */
+  .leading-tight {
+    line-height: 1.25;
+  }
+  
+  .leading-normal {
+    line-height: 1.5;
+  }
+  
+  .leading-relaxed {
+    line-height: 1.625;
+  }
+  
+  /* Letter Spacing Utilities */
+  .tracking-tight {
+    letter-spacing: -0.02em;
+  }
+  
+  .tracking-normal {
+    letter-spacing: 0;
+  }
+  
+  .tracking-wide {
+    letter-spacing: 0.025em;
+  }
+  
+  /* Responsive Content Width for Readability */
+  .content-width {
+    max-width: 65ch; /* ~60-80 characters on desktop */
+  }
+  
+  @media (max-width: 767px) {
+    .content-width {
+      max-width: 45ch; /* ~35-50 characters on mobile */
+    }
+  }
+
+  /* Safe Area Support for Mobile Devices */
+  .safe-area-top {
+    padding-top: env(safe-area-inset-top);
+  }
+  
+  .safe-area-bottom {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+  
+  .safe-area-left {
+    padding-left: env(safe-area-inset-left);
+  }
+  
+  .safe-area-right {
+    padding-right: env(safe-area-inset-right);
+  }
+
+  /* Layout Utility Classes */
+  .container {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1200px;
+  }
+
+  /* Mobile-friendly touch targets */
+  .touch-target {
+    min-height: 44px;
+    min-width: 44px;
+  }
+
+  /* Responsive spacing utilities */
+  .responsive-padding {
+    @apply px-4 py-4 sm:px-6 sm:py-6 lg:px-8 lg:py-8;
+  }
+
+  .responsive-margin {
+    @apply mx-4 my-4 sm:mx-6 sm:my-6 lg:mx-8 lg:my-8;
+  }
+
+  /* Responsive grid utilities */
+  .responsive-grid {
+    @apply grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3 lg:gap-8;
+  }
+
+  /* Profile Drawer Specific Styles */
+  .profile-drawer-backdrop {
+    backdrop-filter: blur(4px);
+  }
+
+  /* Enhanced scrolling utilities */
+  .drawer-scroll {
+    scrollbar-width: thin;
+    scrollbar-color: rgb(203 213 225) transparent;
+    scroll-behavior: smooth;
+  }
+  
+  .drawer-scroll::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  .drawer-scroll::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  
+  .drawer-scroll::-webkit-scrollbar-thumb {
+    background-color: rgb(203 213 225);
+    border-radius: 4px;
+    border: 2px solid transparent;
+    background-clip: content-box;
+  }
+  
+  .drawer-scroll::-webkit-scrollbar-thumb:hover {
+    background-color: rgb(148 163 184);
+  }
+
+  /* Analytics specific scroll utilities */
+  .analytics-scroll {
+    overflow-y: auto;
+    overflow-x: hidden;
+    max-height: calc(100vh - 120px); /* Account for header and footer */
+    scroll-behavior: smooth;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(22, 119, 255, 0.2) transparent;
+  }
+
+  .analytics-scroll::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  .analytics-scroll::-webkit-scrollbar-track {
+    background: transparent;
+    border-radius: 4px;
+  }
+
+  .analytics-scroll::-webkit-scrollbar-thumb {
+    background-color: rgba(22, 119, 255, 0.2);
+    border-radius: 4px;
+    border: 1px solid transparent;
+    background-clip: content-box;
+    transition: background-color 0.2s ease;
+  }
+
+  .analytics-scroll::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(22, 119, 255, 0.4);
+  }
+
+  /* Chart container scroll handling */
+  .chart-container {
+    overflow: visible; /* Ensure charts aren't clipped */
+  }
+
+  /* Enhanced scroll indicators */
+  .scroll-fade-top {
+    position: relative;
+  }
+
+  .scroll-fade-top::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 20px;
+    background: linear-gradient(to bottom, rgba(244, 244, 245, 1) 0%, rgba(244, 244, 245, 0) 100%);
+    z-index: 10;
+    pointer-events: none;
+  }
+
+  .scroll-fade-bottom {
+    position: relative;
+  }
+
+  .scroll-fade-bottom::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 20px;
+    background: linear-gradient(to top, rgba(244, 244, 245, 1) 0%, rgba(244, 244, 245, 0) 100%);
+    z-index: 10;
+    pointer-events: none;
+  }
+
+  /* Enhanced Sidebar Styles */
+  .sidebar-logo-transition {
+    transition: all 0.2s ease-in-out;
+  }
+
+  /* Smooth transitions for sidebar state changes */
+  [data-sidebar="sidebar"] {
+    transition: all 0.2s ease-in-out;
+  }
+
+  /* Ensure proper logo sizing in collapsed state */
+  [data-collapsible="icon"] .sidebar-logo-expanded {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+
+  [data-collapsible="icon"] .sidebar-logo-collapsed {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  /* Improved focus indicators for accessibility */
+  [data-sidebar="menu-button"]:focus-visible {
+    outline: 2px solid var(--color-chart-1);
+    outline-offset: 2px;
+    box-shadow: 0 0 0 4px rgba(22, 119, 255, 0.12);
+  }
+
+  /* Enhanced active state - matches table selection styling */
+  [data-sidebar="menu-button"][data-active="true"] {
+    position: relative;
+    background-color: var(--sidebar-primary) !important;
+    color: var(--sidebar-primary-foreground) !important;
+    font-weight: 600;
+  }
+
+  [data-sidebar="menu-button"][data-active="true"]::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 3px;
+    height: 20px;
+    background: var(--color-chart-1);
+    border-radius: 0 2px 2px 0;
+    transition: all 0.2s ease-in-out;
+  }
+
+  /* Hide active indicator when collapsed */
+  [data-collapsible="icon"] [data-sidebar="menu-button"][data-active="true"]::before {
+    display: none;
+  }
+
+  /* Enhanced menu button states - table-style consistency */
+  [data-sidebar="menu-button"] {
+    position: relative;
+    overflow: hidden;
+    border: 1px solid transparent;
+    margin: 1px 0;
+  }
+
+  /* Table-style selection appearance */
+  [data-sidebar="menu-button"][data-active="true"] {
+    border-color: rgba(22, 119, 255, 0.12);
+    box-shadow: 0 1px 2px rgba(22, 119, 255, 0.04);
+  }
+
+  /* Smooth hover effects */
+  [data-sidebar="menu-button"]:hover:not([data-active="true"]) {
+    background-color: var(--sidebar-accent) !important;
+    color: var(--sidebar-accent-foreground) !important;
+    transform: translateX(2px);
+  }
+
+  [data-collapsible="icon"] [data-sidebar="menu-button"]:hover:not([data-active="true"]) {
+    transform: scale(1.05);
+  }
+
+  /* Ensure active state takes precedence */
+  [data-sidebar="menu-button"][data-active="true"]:hover {
+    background-color: var(--sidebar-primary) !important;
+    color: var(--sidebar-primary-foreground) !important;
+    transform: none;
+  }
+
+  /* Mobile-specific improvements */
+  @media (max-width: 1023px) {
+    /* Ensure touch targets are large enough on mobile */
+    .touch-target,
+    button,
+    [role="button"],
+    input,
+    select,
+    textarea {
+      min-height: 44px;
+    }
+
+    /* Optimize spacing for mobile */
+    .mobile-optimized {
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+
+    /* Responsive typography scaling */
+    .mobile-text-scale {
+      font-size: clamp(0.875rem, 2.5vw, 1rem);
+    }
+
+    /* Mobile scroll adjustments */
+    .analytics-scroll {
+      max-height: calc(100vh - 180px); /* Account for mobile footer */
+    }
+  }
+
+  /* Tablet and larger mobile improvements */
+  @media (min-width: 640px) and (max-width: 1023px) {
+    .tablet-spacing {
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+    }
+  }
+
+  /* Table dropdown menu fixes */
+  [data-radix-popper-content-wrapper] {
+    z-index: 60 !important;
+  }
+
+  /* Ensure dropdown menus appear above sticky table elements */
+  [data-slot="dropdown-menu-content"] {
+    z-index: 60 !important;
+  }
+
+  /* Table overflow handling for dropdowns */
+  .table-container {
+    position: relative;
+  }
+
+  .table-scrollable {
+    overflow-x: auto;
+    overflow-y: visible;
+  }
+
+  /* Sticky column background fixes */
+  .sticky-column {
+    background: inherit;
+    backdrop-filter: blur(8px);
+  }
+
+  /* Enhanced Table Viewport Fitting Utilities */
+  .table-viewport-fit {
+    /* Dynamic height based on content size */
+    height: calc(100vh - 220px); /* Account for header, filters, pagination */
+    min-height: 400px;
+    max-height: none; /* Remove max-height restriction for large datasets */
+    display: flex;
+    flex-direction: column;
+  }
+
+  .table-content-fit {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-card);
+    overflow: hidden;
+    background: var(--card);
+  }
+
+  /* Enhanced Table Body Scrolling - Always Visible Scrollbars for Large Datasets */
+  .table-body-scroll {
+    flex: 1;
+    min-height: 0;
+    overflow-y: scroll; /* Force scrollbar to always be visible */
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(22, 119, 255, 0.3) rgba(244, 244, 245, 0.5);
+    scrollbar-gutter: stable; /* Reserve space for scrollbar */
+  }
+
+  /* Enhanced Webkit Scrollbar for Table Body */
+  .table-body-scroll::-webkit-scrollbar {
+    width: 14px; /* Slightly wider for better visibility */
+    background-color: rgba(244, 244, 245, 0.5);
+  }
+
+  .table-body-scroll::-webkit-scrollbar-track {
+    background: rgba(244, 244, 245, 0.5);
+    border-radius: 7px;
+    border: 1px solid rgba(212, 212, 216, 0.3);
+  }
+
+  .table-body-scroll::-webkit-scrollbar-thumb {
+    background-color: rgba(22, 119, 255, 0.3);
+    border-radius: 7px;
+    border: 2px solid rgba(244, 244, 245, 0.5);
+    background-clip: content-box;
+    transition: all 0.2s ease;
+    min-height: 40px; /* Ensure thumb has minimum size */
+  }
+
+  .table-body-scroll::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(22, 119, 255, 0.5);
+    border-width: 1px;
+  }
+
+  .table-body-scroll::-webkit-scrollbar-thumb:active {
+    background-color: rgba(22, 119, 255, 0.7);
+    border-width: 1px;
+  }
+
+  /* Corner styling for when both scrollbars are present */
+  .table-body-scroll::-webkit-scrollbar-corner {
+    background-color: rgba(244, 244, 245, 0.5);
+    border: 1px solid rgba(212, 212, 216, 0.3);
+  }
+
+  /* Enhanced Table for Large Datasets */
+  .table-large-dataset {
+    /* Ensure consistent row heights for performance */
+    contain: layout style paint;
+  }
+
+  .table-large-dataset .table-row {
+    height: 48px;
+    min-height: 48px;
+    max-height: 48px;
+  }
+
+  /* Pagination-specific height constraints */
+  .table-paginated-20 .table-viewport-fit {
+    height: calc(100vh - 200px);
+    max-height: 600px;
+  }
+
+  .table-paginated-50 .table-viewport-fit {
+    height: calc(100vh - 180px);
+    max-height: 900px;
+  }
+
+  .table-paginated-100 .table-viewport-fit {
+    height: calc(100vh - 160px);
+    max-height: 1200px;
+  }
+
+  /* Force scrollbar visibility for different page sizes */
+  .table-paginated-50 .table-body-scroll,
+  .table-paginated-100 .table-body-scroll {
+    overflow-y: scroll;
+    scrollbar-width: auto; /* Ensure scrollbar is always visible */
+  }
+
+  .table-paginated-50 .table-body-scroll::-webkit-scrollbar,
+  .table-paginated-100 .table-body-scroll::-webkit-scrollbar {
+    width: 16px; /* Even wider for large datasets */
+  }
+
+  .table-paginated-50 .table-body-scroll::-webkit-scrollbar-thumb,
+  .table-paginated-100 .table-body-scroll::-webkit-scrollbar-thumb {
+    background-color: rgba(22, 119, 255, 0.4); /* More visible for large datasets */
+  }
+
+  /* Performance optimizations for large tables */
+  .table-virtual-scroll {
+    will-change: scroll-position;
+    transform: translateZ(0); /* Force hardware acceleration */
+  }
+
+  /* Page layout utilities for better viewport management */
+  .page-layout {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .page-header {
+    flex-shrink: 0;
+  }
+
+  .page-content {
+    flex: 1;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .content-section {
+    flex-shrink: 0;
+  }
+
+  .content-main {
+    flex: 1;
+    min-height: 0;
+    overflow: hidden;
+  }
+
+  /* Mobile-specific table adjustments */
+  @media (max-width: 767px) {
+    .table-viewport-fit {
+      height: calc(100vh - 280px); /* Account for mobile header/footer space */
+      min-height: 300px;
+    }
+    
+    /* Hide scrollbars on mobile for cleaner appearance */
+    .table-body-scroll {
+      scrollbar-width: none;
+      overflow-y: auto; /* Still scrollable, just hidden scrollbar */
+    }
+    
+    .table-body-scroll::-webkit-scrollbar {
+      display: none;
+    }
+
+    /* Ensure mobile touch scrolling works well */
+    .table-body-scroll {
+      -webkit-overflow-scrolling: touch;
+    }
+  }
+
+  /* High DPI display optimizations */
+  @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .table-body-scroll::-webkit-scrollbar {
+      width: 12px; /* Slightly smaller on high DPI */
+    }
+    
+    .table-body-scroll::-webkit-scrollbar-thumb {
+      border-width: 1px;
+    }
+  }
+
+  /* Focus and accessibility improvements for table scrolling */
+  .table-body-scroll:focus-within {
+    outline: 2px solid rgba(22, 119, 255, 0.3);
+    outline-offset: -2px;
+  }
+
+  /* Scroll position indicators */
+  .table-scroll-indicator-top,
+  .table-scroll-indicator-bottom {
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, rgba(22, 119, 255, 0.2), rgba(22, 119, 255, 0.4), rgba(22, 119, 255, 0.2));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+    z-index: 10;
+  }
+
+  .table-scroll-indicator-top {
+    top: 0;
+  }
+
+  .table-scroll-indicator-bottom {
+    bottom: 0;
+  }
+
+  .table-body-scroll[data-scroll="true"] .table-scroll-indicator-top,
+  .table-body-scroll[data-scroll="true"] .table-scroll-indicator-bottom {
+    opacity: 1;
+  }
+}
