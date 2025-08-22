@@ -11,7 +11,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from ".
 import { Textarea } from "./ui/textarea";
 import { Calendar } from "./ui/calendar";
 import { Popover, PopoverContent, PopoverTrigger } from "./ui/popover";
-import { toast } from "sonner@2.0.3";
+import { toast } from "sonner";
 import { Send, Flame, BookOpen, TrendingUp, Users, Mail, FileText, Copy, ExternalLink, AlertTriangle, CheckCircle, Clock, Calendar as CalendarIcon, ChevronLeft, UserPlus, Rocket } from "lucide-react";
 import Avatar from "../imports/Avatar-11-33170";
 import svgPaths from "../imports/svg-slxkusfcc5";

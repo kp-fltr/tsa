@@ -1,6 +1,6 @@
 import { client_registry, getClientById, ClientRegistryEntry } from '../data/client_registry';
 import { ClientRegistryData, ClientKPIs, ClientsResponse, ClientFilters } from './clientRegistryApi';
-import { toast } from 'sonner@2.0.3';
+import { toast } from 'sonner';
 
 // Demo mode service to provide mock data when authentication is bypassed
 class DemoModeService {
@@ -280,11 +280,8 @@ export const demoModeService = new DemoModeService();
 
 // Helper function to determine if we should use demo mode
 export function shouldUseDemoMode(): boolean {
-  // Always use demo mode in Figma Make environment or when localStorage flag is set
-  // This ensures the app works even when API endpoints are not available
   if (typeof window === 'undefined') return false; // Server-side
-  
-  return localStorage.getItem('demo-mode') === 'true' || 
-         !window.location.origin.includes('localhost') ||
-         process.env.NODE_ENV === 'development';
+  const envEnabled = (process.env.NEXT_PUBLIC_DEMO_MODE === '1' || process.env.NEXT_PUBLIC_DEMO_MODE === 'true');
+  const localFlag = localStorage.getItem('demo-mode') === 'true';
+  return envEnabled || localFlag;
 }

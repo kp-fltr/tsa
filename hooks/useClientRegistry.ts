@@ -11,7 +11,7 @@ import {
   ClientFilters,
   clientCache
 } from '../services/clientRegistryApi';
-import { toast } from 'sonner@2.0.3';
+import { toast } from 'sonner';
 
 // Custom hook for managing client registry data with caching and real-time updates
 export function useClientRegistry() {

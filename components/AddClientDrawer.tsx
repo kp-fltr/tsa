@@ -7,7 +7,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from ".
 import { Drawer, DrawerContent, DrawerHeader, DrawerTitle, DrawerDescription, DrawerClose } from "./ui/drawer";
 import { Badge } from "./ui/badge";
 import { Alert, AlertDescription } from "./ui/alert";
-import { toast } from "sonner@2.0.3";
+import { toast } from "sonner";
 import { DateInput, formatDateDDMMYYYY } from "./DateInput";
 import { 
   User, 

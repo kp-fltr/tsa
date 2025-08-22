@@ -4,10 +4,10 @@
  */
 
 // These will be replaced at build time by Next.js
-// Default to safe fallback values
+// Default to OFF for safety
 const NEXT_PUBLIC_DEMO_MODE = typeof process !== 'undefined' 
   ? process.env.NEXT_PUBLIC_DEMO_MODE 
-  : '1'; // Default to demo mode in case of issues
+  : '0';
 
 const NODE_ENV = typeof process !== 'undefined' 
   ? process.env.NODE_ENV 
